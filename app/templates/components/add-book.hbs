@@ -1,0 +1,34 @@
+<div class="panel panel-danger">
+<div class="panel panel-heading"><span class="glyphicon glyphicon-book"></span> Add Book</div>
+<div class="panel panel-body">
+  <div class="container-fluid">
+
+    {{#if res}}
+     <ul class="list-group">
+       <li class="list-group-item list-group-item-success">{{res}}</li>
+     </ul>
+    {{/if}}  
+
+    <form {{action "addbook" on='submit' class="form-group"}}>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        {{input value=title key-up=(action 'resetResult') class="form-control" }}
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        {{input value=author key-up=(action 'resetResult') class="form-control" id="author" }}
+      </div>
+      <div class="form-group">
+        <label for="edition">Edition:</label>
+        {{input value=edition key-up=(action 'resetResult') class="form-control" id="edition" }}
+      </div>
+      <div class="form-group">
+        <label for="shelfno">Shelf Number:</label>
+        {{input value=shelfno key-up=(action 'resetResult') class="form-control" id="shelfno" }}
+      </div>
+      <button type="submit" class="btn btn-danger pull-right">Submit</button>
+    </form>
+
+  </div> 
+</div>
+</div>

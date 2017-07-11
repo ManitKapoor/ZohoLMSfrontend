@@ -1,0 +1,86 @@
+<div class="container-fluid">
+<form {{action 'filterByInput' title author edition on='submit'}}>
+<div class="row">
+
+<div class="col-md-3 col-lg-3">
+{{input value=title class='form-control' placeholder='title..'}}
+</div>
+
+<div class="col-md-3 col-lg-3">
+{{input value=author class='form-control' placeholder='author..'}}
+</div>
+
+<div class="col-md-3 col-lg-3">
+{{input value=edition class='form-control' placeholder='edition..'}}
+</div>
+
+<div class="col-md-3 col-lg-3">
+<button type="submit" class='btn btn-success'><span class="glyphicon glyphicon-search"></span></button>
+<button class="btn btn-info"  {{ action 'displayall' }}><span class="glyphicon glyphicon-th-list"></span></button>
+</div>
+
+</div>
+</form>
+</div>
+
+<br>
+<div class="container-fluid">
+  <div class="panel panel-default">
+    <div class="panel panel-heading">
+
+      {{!-- {{Page Number}} --}}
+      <ul class="pagination">
+        {{#if showPrevious}}
+          <li><a {{action "previousClicked"}}> prev </a></li>
+         {{/if}}
+        {{#each pageNumbers as |pageNumber|}}
+           {{#if (eq pageNumber 1)}}
+           <li id="d{{pageNumber}}" class="active"><a {{action "pageClicked" pageNumber}}>{{pageNumber}}</a></li>
+           {{else}}
+             <li id="d{{pageNumber}}"><a {{action "pageClicked" pageNumber}}>{{pageNumber}}</a></li>
+            {{/if}} 
+        {{/each}}
+        {{#if showNext}}
+          <li><a class="btn btn-default" {{action "nextClicked"}}> next </a></li>
+        {{/if}}
+      </ul>
+
+    </div>
+    <div class="panel panel-body">
+
+     {{!-- {{Search Result}} --}}
+      <table class="table table-condensed">
+        <thead>
+
+         {{!-- {{Header column}} --}}
+         <tr>
+           <th>Title</th>
+           <th>Author</th>
+           <th>Edition</th>
+           <th>Issued</th>
+           <th>Shelf</th>
+         </tr>
+
+        </thead>
+       <tbody>
+
+        {{!-- {{Result books displayed below}} --}}
+        {{#each paginatedItems as |book|}}
+        <tr>
+           <td>{{book.title}}</td>
+           <td>{{book.author}}</td>
+           <td>{{book.edition}}</td>
+           <td>{{book.issued}}</td>
+           <td>{{book.shelfno}}</td>
+        </tr>
+        {{/each}}
+
+       </tbody>
+    </table>
+
+   </div>
+  </div>
+</div>
+
+
+

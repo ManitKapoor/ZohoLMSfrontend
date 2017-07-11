@@ -1,0 +1,11 @@
+import Ember from 'ember';
+import ENV from 'libapp/config/environment';
+
+export default Ember.Route.extend({
+	ajax: Ember.inject.service(),
+	model() {
+		if(ENV.environment != "production")
+			return [{ "type": "book", "id": "1", "title": "javaee", "author": "thomas michael", "edition": "4.2.1", "shelfno": "1", "issued": "Free" } ,{ "type": "book", "id": "2", "title": "struts3", "author": "john clarke", "edition": "2.0.1", "shelfno": "2", "issued": "Free" } ,{ "type": "book", "id": "3", "title": "struts2", "author": "john clarke", "edition": "1.0.1", "shelfno": "1", "issued": "Free" },{ "type": "book", "id": "1", "title": "javaee", "author": "thomas michael", "edition": "4.2.1", "shelfno": "1", "issued": "Free" } ,{ "type": "book", "id": "2", "title": "struts3", "author": "john clarke", "edition": "2.0.1", "shelfno": "2", "issued": "Free" } ,{ "type": "book", "id": "3", "title": "struts2", "author": "john clarke", "edition": "1.0.1", "shelfno": "1", "issued": "Free" },{ "type": "book", "id": "1", "title": "javaee", "author": "thomas michael", "edition": "4.2.1", "shelfno": "1", "issued": "Free" } ,{ "type": "book", "id": "2", "title": "struts3", "author": "john clarke", "edition": "2.0.1", "shelfno": "2", "issued": "Free" } ,{ "type": "book", "id": "3", "title": "struts2", "author": "john clarke", "edition": "1.0.1", "shelfno": "1", "issued": "Free" },{ "type": "book", "id": "1", "title": "javaee", "author": "thomas michael", "edition": "4.2.1", "shelfno": "1", "issued": "Free" } ,{ "type": "book", "id": "2", "title": "struts3", "author": "john clarke", "edition": "2.0.1", "shelfno": "2", "issued": "Free" } ,{ "type": "book", "id": "3", "title": "struts2", "author": "john clarke", "edition": "1.0.1", "shelfno": "1", "issued": "Free" },{ "type": "book", "id": "1", "title": "javaee", "author": "thomas michael", "edition": "4.2.1", "shelfno": "1", "issued": "Free" } ,{ "type": "book", "id": "2", "title": "struts3", "author": "john clarke", "edition": "2.0.1", "shelfno": "2", "issued": "Free" } ,{ "type": "book", "id": "3", "title": "struts2", "author": "john clarke", "edition": "1.0.1", "shelfno": "1", "issued": "Free" } ];
+		return this.get('ajax').request('/LMS/BookAction');
+	}
+});

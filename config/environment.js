@@ -5,7 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'libapp',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    baseURL: 'emberapp',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

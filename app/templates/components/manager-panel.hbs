@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+
+      {{!-- {{manager menu}} --}}
+   	 <div class="panel panel-info">
+       <div class="panel panel-body">
+         <ul class="nav nav-pills nav-stacked">
+           <li class="active"><a {{action 'setopt' 'issueBook' on="click"}}>Issue Book</a></li>
+           <li class="active"><a {{action 'setopt' 'renewBook' on="click"}}>Renew Book</a></li>
+         </ul>
+       </div>
+      </div>
+
+     </div>
+
+     <div class="col-md-8 col-lg-8">
+     
+      {{!-- {{option}} --}}
+     {{#if issueBook}}
+       {{issue-book}}
+      {{/if}}
+     {{#if renewBook}}
+       {{renew-book}}
+      {{/if}} 
+
+     </div>
+
+  </div>
+</div>

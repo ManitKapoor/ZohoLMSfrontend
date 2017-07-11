@@ -1,0 +1,47 @@
+<div class="panel panel-danger">
+<div class="panel panel-body">
+  <ul class="nav nav-tabs">
+    <li id="homeopt" class="active"><a {{action 'setopt' 'home'}}>About</a></li>
+    <li id="menu1opt" ><a {{action 'setopt' 'menu1'}}>Role</a></li>
+  </ul>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>UserName</h3>
+    <p>{{username}}</p>
+    <h2>Role</h2>
+    {{#if isUser}}
+      <p><span class="badge">User</span></p>
+     {{/if}}
+    {{#if isAdmin}}
+      <p><span class="label label-primary">Admin</span></p>
+     {{/if}}
+    {{#if isManager}}
+      <p><span class="label label-info">Manager</span></p>
+     {{/if}}   
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Role details</h3>
+    {{#if isUser}}
+      <h3><span class="badge">User</span></h3>
+      <ul class="list-group">
+        <li class="list-group-item">Can use Catalogue to search for books</li>
+        <li class="list-group-item">Can view his books</li>
+      </ul>
+     {{/if}}
+    {{#if isAdmin}}
+      <h3><span class="label label-primary">Admin</span></h3>
+      <ul class="list-group">
+        <li class="list-group-item">Can use Catalogue to search for books</li>
+        <li class="list-group-item">Can add books,users and view all users</li>
+      </ul>
+     {{/if}}
+    {{#if isManager}}
+      <h3><span class="label label-info">Manager</span></h3>
+        <li class="list-group-item">Can use Catalogue to search for books</li>
+        <li class="list-group-item">Can issue and renew books for users</li>
+     {{/if}} 
+  </div>
+</div>
+</div>
+</div>
+
