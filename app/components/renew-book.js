@@ -18,6 +18,8 @@ export default Ember.Component.extend({
 			else{
 				this.set('res',"Renewed charge: 0");
 			}
+			this.set('title','');
+			this.set('name','');
 		},
 		resetResult() {
 			this.set('res',null);
