@@ -20,8 +20,7 @@ export default Ember.Component.extend({
 			else{
 				this.set("res","Add User!");
 			}
-			this.set('name','');
-			this.set('password','');
+			this.$('#adduserform')[0].reset();
 		},
 
 		resetResult() {

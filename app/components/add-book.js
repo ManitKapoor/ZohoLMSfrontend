@@ -21,10 +21,7 @@ export default Ember.Component.extend({
 			else {
 				this.set("res","Added Book!");
 			}
-			this.set('title','');
-			this.set('author','');
-			this.set('edition','');
-			this.set('shelfno','');
+			this.$('#addbookform')[0].reset();
 		},
 		
 		resetResult() {

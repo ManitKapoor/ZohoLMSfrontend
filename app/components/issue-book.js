@@ -19,8 +19,7 @@ export default Ember.Component.extend({
 			else{
 				this.set('res',"Issued Book");
 			}
-			this.set('title','');
-			this.set('name','');
+			this.$('#issuebookform')[0].reset();
 		},
 		resetResult() {
 			this.set('res',null);

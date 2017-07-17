@@ -9,7 +9,7 @@
      </ul>
     {{/if}}  
 
-    <form {{action "addbook" on='submit' class="form-group"}}>
+    <form id='addbookform' {{action "addbook" on='submit' class="form-group"}}>
       <div class="form-group">
         <label for="title">Title:</label>
         {{input value=title key-up=(action 'resetResult') class="form-control" }}
