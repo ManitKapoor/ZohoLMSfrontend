@@ -1,7 +1,5 @@
 # libapp
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A simple Library Management System using ember as frontend and java as backend
 
 for [Backend](https://github.com/ManitKapoor/LMSbackend) 
 
